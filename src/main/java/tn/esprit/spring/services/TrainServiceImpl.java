@@ -1,29 +1,23 @@
 package tn.esprit.spring.services;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import tn.esprit.spring.entities.Train;
 import tn.esprit.spring.entities.Ville;
 import tn.esprit.spring.entities.Voyage;
+import tn.esprit.spring.entities.Voyageur;
 import tn.esprit.spring.entities.etatTrain;
 import tn.esprit.spring.repository.TrainRepository;
 import tn.esprit.spring.repository.VoyageRepository;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import tn.esprit.spring.repository.VoyageurRepository;
-
-import tn.esprit.spring.entities.Voyageur;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import tn.esprit.spring.entities.Voyageur;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.text.ParseException;
-
-import org.springframework.scheduling.annotation.Scheduled;
 
 @Service
 public class TrainServiceImpl implements ITrainService {
