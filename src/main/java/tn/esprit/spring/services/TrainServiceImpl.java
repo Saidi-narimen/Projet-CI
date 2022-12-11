@@ -15,7 +15,6 @@ import tn.esprit.spring.entities.Voyageur;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import tn.esprit.spring.entities.Voyageur;
 import org.springframework.transaction.annotation.Transactional;
@@ -101,20 +100,14 @@ public class TrainServiceImpl implements ITrainService {
 
 
         System.out.println("taille test"); 
-       // Voyageur c = VoyageurRepository.findById(idVoyageur).get();
-        Optional<Voyageur> c = this.getOptionalValue();
-
-     // ...
-
-     Voyageur stringValue = c.get();
-     //
+        Voyageur c = VoyageurRepository.findById(idVoyageur).get();
      
         List<Voyage> lesvoyages = new ArrayList<>();
         lesvoyages = voyageRepository.RechercheVoyage(nomGareDepart, nomGareDepart, heureDepart);
         System.out.println("taille" + lesvoyages.size());
         for (int i = 0; i < lesvoyages.size(); i++) {
             if (lesvoyages.get(i).getTrain().getNbPlaceLibre() != 0) {
-               // lesvoyages.get(i).getMesVoyageurs().add(c);
+                lesvoyages.get(i).getMesVoyageurs().add(c);
                 lesvoyages.get(i).getTrain().setNbPlaceLibre(lesvoyages.get(i).getTrain().getNbPlaceLibre() - 1);
             } else
                 System.out.print("Pas de place disponible pour " + VoyageurRepository.findById(idVoyageur).get().getNomVoyageur());
@@ -122,12 +115,7 @@ public class TrainServiceImpl implements ITrainService {
         }
     }
 
-    private Optional<Voyageur> getOptionalValue() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
+    @Override
     public void DesaffecterVoyageursTrain(Ville nomGareDepart, Ville nomGareArrivee, double heureDepart) {
         List<Voyage> lesvoyages = new ArrayList<>();
         lesvoyages = voyageRepository.RechercheVoyage(nomGareDepart, nomGareArrivee, heureDepart);
