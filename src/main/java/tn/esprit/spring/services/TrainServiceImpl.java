@@ -99,7 +99,7 @@ public class TrainServiceImpl implements ITrainService {
     public void affecterTainAVoyageur(Long idVoyageur, Ville nomGareDepart, Ville nomGareArrivee, double heureDepart) {
     	
         System.out.println("taille test");
-        Voyageur c = VoyageurRepository.findById(idVoyageur).get();
+        Voyageur c = VoyageurRepository.findById(idVoyageur).orElse(null);
         List<Voyage> lesvoyages = new ArrayList<>();
         lesvoyages = voyageRepository.RechercheVoyage(nomGareDepart, nomGareDepart, heureDepart);
         System.out.println("taille" + lesvoyages.size());

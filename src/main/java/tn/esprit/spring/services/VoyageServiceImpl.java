@@ -29,8 +29,8 @@ public class VoyageServiceImpl implements IVoyageService {
 
     public void affecterTrainAVoyage(Long idTrain, Long idVoyage) {
 
-        Train t = trainRepository.findById(idTrain).get();
-        Voyage v = voyageRepository.findById(idVoyage).get();
+        Train t = trainRepository.findById(idTrain).orElse(null);
+        Voyage v = voyageRepository.findById(idVoyage).orElse(null);
         v.setTrain(t);
         voyageRepository.save(v);
     }
