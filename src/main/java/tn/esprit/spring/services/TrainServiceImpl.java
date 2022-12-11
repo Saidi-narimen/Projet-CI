@@ -8,7 +8,6 @@ import tn.esprit.spring.entities.etatTrain;
 import tn.esprit.spring.repository.TrainRepository;
 import tn.esprit.spring.repository.VoyageRepository;
 
-import org.hibernate.annotations.common.util.impl.Log_.logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import tn.esprit.spring.repository.VoyageurRepository;
 
@@ -17,14 +16,12 @@ import tn.esprit.spring.entities.Voyageur;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import tn.esprit.spring.entities.Voyageur;
 import org.springframework.transaction.annotation.Transactional;
-
-import ch.qos.logback.classic.Logger;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import java.text.ParseException;
 
 import org.springframework.scheduling.annotation.Scheduled;
 
@@ -52,10 +49,9 @@ public class TrainServiceImpl implements ITrainService {
         int cpt = 0;
         int occ = 0;
         int s=0;
-        final Logger logger = null;
+        
         List<Voyage> listvoyage = (List<Voyage>) voyageRepository.findAll();
-        //System.out.println("tailee" + listvoyage.size());
-        logger.log(null, "tailee" + listvoyage.size(), s, null, null, null);
+        System.out.println("tailee" + listvoyage.size());
 
         for (int i = 0; i < listvoyage.size(); i++) {
             System.out.println("gare" + nomGareDepart + "value" + listvoyage.get(0).getGareDepart());
