@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+
 
 @Entity 
 public class Voyageur implements Serializable{
@@ -30,7 +30,7 @@ public class Voyageur implements Serializable{
 	}
 
 	@ManyToMany(mappedBy = "mesVoyageurs")
-    public List<Voyage> mesvoyages;
+    private List<Voyage> mesvoyages;
 
 	public Long getIdVoyageur() {
 		return idVoyageur;
