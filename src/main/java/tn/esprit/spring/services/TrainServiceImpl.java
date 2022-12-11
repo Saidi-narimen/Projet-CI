@@ -108,7 +108,7 @@ public class TrainServiceImpl implements ITrainService {
                 lesvoyages.get(i).getMesVoyageurs().add(c);
                 lesvoyages.get(i).getTrain().setNbPlaceLibre(lesvoyages.get(i).getTrain().getNbPlaceLibre() - 1);
             } else
-                System.out.print("Pas de place disponible pour " + VoyageurRepository.findById(idVoyageur).get().getNomVoyageur());
+                System.out.print("Pas de place disponible pour " + VoyageurRepository.findById(idVoyageur).orElse(null).getNomVoyageur());
             voyageRepository.save(lesvoyages.get(i));
         }
     }
