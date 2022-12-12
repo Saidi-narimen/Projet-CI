@@ -151,6 +151,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>ExamThourayaS2</finalName>
 	</build>
 
 </project>
