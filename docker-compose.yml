@@ -18,7 +18,7 @@ services:
     container_name: dockerfile_spring1
     ports:
       - '8089:8089'
-    image: narimen77/dockerfile_spring:2.2.4
+    image: narimen77/ExamThourayaS2
 
 volumes:
   mysql-containerFinal1: { }
