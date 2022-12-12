@@ -1,7 +1,7 @@
 version: "3.4"
 
 services:
-  mysql-containerFinal1:
+  mysql-container1:
     container_name: mysql-container1
     ports:
       - '3306:3306'
