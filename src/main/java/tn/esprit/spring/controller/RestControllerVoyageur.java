@@ -49,6 +49,17 @@ public class RestControllerVoyageur {
     public void ajouterVoyageur(@RequestBody Voyageur Voyageur) {
         iVoyageurservice.ajouterVoyageur(Voyageur);
     }
+    @PostMapping("/supprimer Voyageur ")
+    @ResponseBody
+    public void supprimerVoyageur(@RequestBody Voyageur Voyageur) {
+        iVoyageurservice.supprimerVoyageur(Voyageur);
+    }
+    
+    @GetMapping("/afficher")
+    public void recupererAll() {
+    	iVoyageurservice.recupererAll();
+    } 
+    
 
     //http://localhost:8083/SpringMVC/servlet/affecterTrainAVoyage/{idtr}/{idvyg}
     @PutMapping(value = "/affecterTrainAVoyage/{idtr}/{idvyg}")
