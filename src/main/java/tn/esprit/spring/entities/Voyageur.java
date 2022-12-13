@@ -48,9 +48,11 @@ public class Voyageur implements Serializable{
 		this.nomVoyageur = nomVoyageur;
 	}
 
-	public Voyageur() {
+	public Voyageur(Long long1, String string) {
 		super();
 	}
+
+	
 	
 	
 }
